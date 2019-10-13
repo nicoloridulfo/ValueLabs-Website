@@ -1,5 +1,5 @@
 # Pistockio
-![IconImage](icon.PNG =200x200)
+![IconImage](icon.PNG)
 This site is under construction!
 This website will host the Pistockio-project.
 
