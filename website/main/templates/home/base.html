@@ -1,0 +1,82 @@
+<!DOCTYPE html> {% load static %}
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <nav id="topnav">
+        <div class="option" id="Home" onclick="location.href='/'">
+        <a>ValueLabs</a>
+        </div><div class="option" id="Blog" onclick="location.href='/blog'">
+        <a>Blog</a>
+        </div><div class="option" id="Code" onclick="location.href='/code'">
+        <a>Code</a>
+        </div><div class="option" id="About" onclick="location.href='/about'">
+        <a>About</a>
+        </div><div class="option" id="Contact" onclick="location.href='/contact'">
+        <a>Contact</a>
+    </nav>
+    <div class="fade-in">
+    {% block content %} {% endblock content %}
+    <nav id="vertnav" class="closed fade-in">
+        <div class="vertoption" id="vertHome" onclick="location.href='/'">
+        <a>ValueLabs</a>
+        </div><div class="vertoption" id="vertBlog" onclick="location.href='/blog'">
+        <a href="/blog">Blog</a>
+        </div><div class="vertoption" id="vertCode" onclick="location.href='/code'">
+        <a href="/code">Code</a>
+        </div><div class="vertoption" id="vertAbout" onclick="location.href='/about'">
+        <a href="/about">About</a>
+        </div><div class="vertoption" id="vertContact" onclick="location.href='/contact'">
+        <a href="/contact">Contact</a></div>
+    </nav>
+    <div id="burger" onclick="verticalMenu()">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+</div>
+    <script>
+        const title = "{{ title }}";
+        if (title == "Home"){
+            document.getElementById("Home").classList.add("active");
+            document.getElementById("vertHome").classList.add("active");}
+        if (title == "Blog"){
+            document.getElementById("Blog").classList.add("active");
+            document.getElementById("vertBlog").classList.add("active");}
+        if (title == "Code"){
+            document.getElementById("Code").classList.add("active");
+            document.getElementById("vertCode").classList.add("active");}
+        if (title == "About"){
+            document.getElementById("About").classList.add("active");
+            document.getElementById("vertAbout").classList.add("active");}
+        if (title == "Contact"){
+            document.getElementById("Contact").classList.add("active");
+            document.getElementById("vertContact").classList.add("active");}
+
+        function verticalMenu() {
+
+            var vertnav = document.getElementById("vertnav");
+            vertnav.classList.remove("closed");
+        }
+        window.addEventListener('click', function(e){   
+        if (document.getElementById('burger').contains(e.target)){
+            document.getElementById("burger").classList.add("invisible");
+        }
+        else{
+            if (!document.getElementById("vertnav").classList.contains("closed")){
+            document.getElementById("burger").classList.remove("invisible");
+            document.getElementById("vertnav").classList.add("closed");
+        }
+        }
+        });
+    </script>
+</body>
+
+</html>

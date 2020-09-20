@@ -1,0 +1,52 @@
+{% extends "home/base.html" %} {% block content %}
+<head>
+    <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.1.min.js" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.1.min.js" type="text/css" />
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.1.min.js"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.1.min.js"></script>
+    <script type="text/javascript">Bokeh.set_log_level("info");</script>
+</head>
+<div style="margin: 5%; opacity: 70%;">
+{{ div | safe }}
+{{ script | safe }}
+</div>
+
+<div id="tables">
+<table class="table" id="longs">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ticker</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for long in longs %}
+            <tr>
+                <td>{{ long.id }}</td>
+                <td>{{ long.ticker }}:</td>
+                <td>{{ long.value }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<table class="table" id="shorts">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ticker</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for short in shorts %}
+            <tr>
+                <td>{{ short.id }}</td>
+                <td>{{ short.ticker }}:</td>
+                <td>{{ short.value }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+{% endblock content %}
