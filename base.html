@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Roboto Mono' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.1.min.js" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.1.min.js" type="text/css" />
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.0.1.min.js"></script>
+    <script src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.0.1.min.js"></script>
+    <script type="text/javascript">Bokeh.set_log_level("info");</script>
+    <title>ValueLabs</title>
+</head>
+
+<body style="background-image: url(.{{ url_for('static', filename='background.jpg') }})">
+
+    <div class="element" style="margin-left: 0; margin-right: 0; opacity: 95%;">
+        <h1>ValueLabs</h1>
+    </div>
+
+    <div class="element">
+        {{ div | safe }}
+        {{ script | safe }}
+    </div>
+    <div class="element" style="background: none; border: none;">
+    <table id="longs">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ticker</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for long in longs %}
+                <tr>
+                    <td>{{ long.id }}</td>
+                    <td>{{ long.ticker }}:</td>
+                    <td>{{ long.value }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <table id="shorts">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Ticker</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for short in shorts %}
+                <tr>
+                    <td>{{ short.id }}</td>
+                    <td>{{ short.ticker }}:</td>
+                    <td>{{ short.value }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+    <div class="element">
+    <h1>Blog</h1>
+    {% for entry in blogs %}
+        <hr style="width: 75%">
+        <div class="text">
+            <h5>{{entry.date|safe}}</h5>
+            <h2>{{entry.title|safe}}</h2>
+            {{entry.body|safe}}
+        </div>
+    {% endfor %}
+    <hr style="width: 75%;">
+    <br>
+    </div>
+
+    <div class="element">
+        <div class="text">
+            <p>A small trading team specializing in trading using machine learning.</p>
+        </div>
+    </div>
+
+    <div class="element" style="margin: 0; opacity: 90%">
+        <div class="text">
+            <p> Feel free to contact us at: <a href="mailto:info@valuelabs.space">info@valuelabs.space</a>
+        </div>
+    </div>
+</body>
+</html>
+
+<style>    
+body {
+    font-family: 'Roboto Mono';
+    font-size: 22px;
+    margin: 0;
+    background-color: rgb(94, 102, 107);
+}
+
+.element {
+    text-align: center;
+    background-color: #ffffff;
+    border: black solid 2px;
+    height: 100%;
+    margin: 0 5% 5% 5%;
+    opacity: 75%;
+}
+
+table{
+    background-color: #ffffff;
+    vertical-align: top;
+    display: inline-table;
+    min-height: 100%;
+    width: 49%;
+    margin: 0;
+    border: 1px solid black;
+}
+
+.text a {
+    text-decoration: none;
+    color: rgb(26, 74, 105);
+}
+</style>
