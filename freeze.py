@@ -10,3 +10,4 @@ if __name__ == '__main__':
     freezer.freeze()
 
     os.system("mv build docs")
+    os.system('echo "valuelabs.space" > docs/CNAME')
