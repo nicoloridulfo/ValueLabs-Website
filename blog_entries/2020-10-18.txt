@@ -1,0 +1,9 @@
+Website launch!
+
+After hours of work, the first version of the website has now been launched. <br><br>
+
+Technical information:<br>
+The website is made using python and the flask library. Since the website's content is static, 
+the choise to host it using github pages was beneficial in many ways. The security implications 
+of hosting a website are minimized, the hosting costs are none and it is way easier to deploy.
+After the website is finished, using <a href="https://github.com/Frozen-Flask/Frozen-Flask">Frozen-Flask</a> it is frozen and pushed to the github repository.
