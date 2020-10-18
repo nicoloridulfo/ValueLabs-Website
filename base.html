@@ -64,12 +64,14 @@
     <div class="element">
     <h1>Blog</h1>
     {% for entry in blogs %}
+    <div style="text-align: justify; margin-left: 5%; margin-right: 5%">
         <hr style="width: 75%">
         <div class="text">
             <h5>{{entry.date|safe}}</h5>
             <h2>{{entry.title|safe}}</h2>
             {{entry.body|safe}}
         </div>
+    </div>
     {% endfor %}
     <hr style="width: 75%;">
     <br>
