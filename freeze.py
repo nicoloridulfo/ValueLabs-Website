@@ -1,9 +1,13 @@
 from flask_frozen import Freezer
 from run import app
-from os import rename
+import os
+import shutil
 
 freezer = Freezer(app)
 
 if __name__ == '__main__':
+    os.system("rm -rf build docs")
+
     freezer.freeze()
-    rename("build/", "docs/")
+    
+    os.system("mv build docs")
