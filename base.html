@@ -16,7 +16,7 @@
 <body style="background-image: url(.{{ url_for('static', filename='background.jpg') }})">
 
     <div class="element" style="margin-left: 0; margin-right: 0; opacity: 95%;">
-        <h1>ValueLabs</h1>
+        <h1 style="margin: 1%;">ValueLabs</h1>
     </div>
 
     <div class="element">
@@ -61,26 +61,35 @@
         </tbody>
     </table>
     </div>
+
+
     <div class="element">
-    <h1>Blog</h1>
-    {% for entry in blogs %}
-    <div style="text-align: justify; margin-left: 5%; margin-right: 5%">
+        <h1>About</h1>
         <hr style="width: 75%">
-        <div class="text">
-            <h5>{{entry.date|safe}}</h5>
-            <h2>{{entry.title|safe}}</h2>
-            {{entry.body|safe}}
+        <div class="text" style="text-align: justify; margin-left: 5%; margin-right: 5%;">
+            <p>Valuelabs is a project focused on capital management using machine learning.</p>
+            The systems are currently in development and can be seen been in version alpha. We have a great interest in Open Source and will therefore be sharing most of the source code in the hope that more companies and developers will do the same. Although, for obvious reasons, the secret sauce will be kept secret.
+
+            <p>Frequent updates will be made to the graph showing the net worth of the project and the blog entries. So stay tuned for more updates!</p>
         </div>
-    </div>
-    {% endfor %}
-    <hr style="width: 75%;">
-    <br>
+        <hr style="width: 75%">
+        <br>
     </div>
 
     <div class="element">
-        <div class="text">
-            <p>A small trading team specializing in trading using machine learning.</p>
-        </div>
+        <h1>Blog</h1>
+        {% for entry in blogs %}
+            <div style="text-align: justify; margin-left: 5%; margin-right: 5%">
+                <hr style="width: 75%">
+                <div class="text">
+                    <h5>{{entry.date|safe}}</h5>
+                    <h2>{{entry.title|safe}}</h2>
+                    <p>{{entry.body|safe}}</p>
+                </div>
+            </div>
+        {% endfor %}
+        <hr style="width: 75%;">
+        <br>
     </div>
 
     <div class="element" style="margin: 0; opacity: 90%">
@@ -102,10 +111,12 @@ body {
 .element {
     text-align: center;
     background-color: #ffffff;
-    border: black solid 2px;
+    border: 1px solid rgb(94, 102, 107);
     height: 100%;
-    margin: 0 5% 5% 5%;
+    margin: 0 5% 4% 5%;
     opacity: 75%;
+
+    box-shadow:20px 20px 10% rgb(150, 150, 150);  
 }
 
 table{
