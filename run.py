@@ -13,7 +13,7 @@ app = Flask(__name__, template_folder=".")
 @app.route("/")
 def home():
     content = json.load(open("data.json"))
-    plot = figure(title="Line graph", x_axis_label="Time",x_axis_type='datetime', y_axis_label="Value", plot_width=800, plot_height=250,sizing_mode='stretch_width')
+    plot = figure(title="NET WORTH", x_axis_label="Time",x_axis_type='datetime', y_axis_label="Value", plot_width=800, plot_height=250,sizing_mode='stretch_width')
     #curdoc().theme = 'dark_minimal'
     #curdoc().add_root(plot)
     plot.toolbar.logo = None
