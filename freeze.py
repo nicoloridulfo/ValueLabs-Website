@@ -5,9 +5,9 @@ import os
 freezer = Freezer(app)
 
 if __name__ == '__main__':
-    os.system("rm -rf build docs")
+    #os.system("rm -rf build docs")
 
     freezer.freeze()
 
-    os.system("mv build docs")
-    os.system('echo "valuelabs.space" > docs/CNAME')
+    #os.system("mv build docs")
+    #os.system('echo "valuelabs.space" > docs/CNAME')
