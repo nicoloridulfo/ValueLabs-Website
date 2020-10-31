@@ -1,4 +1,4 @@
-<h3>Happy Halloween!</h3>
+Happy Halloween!
 <br>
 Since the last post the deployment of updates to the website has been automated using github actions and the <a href="https://github.com/nicoloridulfo/ValueLabs-Website">website-repo</a> has been made public.<br>
 <br>
