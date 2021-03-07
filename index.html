@@ -17,7 +17,9 @@
             opacity: 75%;
         }
 
-        table, th, td { 
+        table,
+        th,
+        td {
             background-color: #ffffff;
             text-align: center;
             vertical-align: top;
@@ -60,10 +62,13 @@
         <hr style="width: 90%">
         <div class="text" style="text-align: justify; margin-left: 5%; margin-right: 5%;">
             <p>
-                Valuelabs is a micro-fund that uses a mixed strategy consisting of systematic and discretionary components.
+                Valuelabs is a micro-fund that uses a mixed strategy consisting of systematic and discretionary
+                components.
 
-                The systems are currently in development and can be seen as been in an alpha version. We have a passion for
-                Open Collaboration and will therefore be sharing analysis and source code in the hope that more companies and
+                The systems are currently in development and can be seen as been in an alpha version. We have a passion
+                for
+                Open Collaboration and will therefore be sharing analysis and source code in the hope that more
+                companies and
                 developers will do the same. Although, for obvious reasons, the secret sauce will be kept secret.
             </p>
         </div>
@@ -71,96 +76,41 @@
         <br>
     </div>
     <script>
-        $.getJSON('data.json', function(data) {         
-            console.log(data);
-        });
-        var data = {
-            "value": [
-                {
-                    "x": 1614643200,
-                    "y": 100
+        $.getJSON('data.json', function (data) {
+            var ctx = document.getElementById('chart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Value',
+                        data: data["value"]
+                    }]
                 },
-                {
-                    "x": 1614729600,
-                    "y": 91
-                },
-                {
-                    "x": 1614816000,
-                    "y": 102
-                },
-                {
-                    "x": 1614902400,
-                    "y": 101
-                }
-            ],
-            "positions": [
-                {
-                    "name": "Axolot Solutions",
-                    "weight": 14
-                },
-                {
-                    "name": "NCC A",
-                    "weight": 12
-                },
-                {
-                    "name": "Simris Alg",
-                    "weight": 3
-                },
-                {
-                    "name": "Shape Robotics",
-                    "weight": 10
-                },
-                {
-                    "name": "Serneke",
-                    "weight": 10
-                },
-                {
-                    "name": "Dicot",
-                    "weight": 6
-                },
-                {
-                    "name": "S2Medical",
-                    "weight": 15
-                },
-                {
-                    "name": "WilLak",
-                    "weight": 8
-                }
-            ]
-        } 
-        var ctx = document.getElementById('chart').getContext('2d');
-        var chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                datasets: [{
-                    label: 'Value',
-                    data: data["value"]
-                }]
-            },
-            options: {
-                scales: {
-                    xAxes: [
-                        {
-                            type: 'linear',
-                            position: 'bottom',
-                            ticks: {
-                                callback(value) {
-                                    var time = new Date(value * 1000);
-                                    return time.getFullYear() + "-" + (time.getMonth() + 1) + '-' + time.getDate();
+                options: {
+                    scales: {
+                        xAxes: [
+                            {
+                                type: 'linear',
+                                position: 'bottom',
+                                ticks: {
+                                    callback(value) {
+                                        var time = new Date(value * 1000);
+                                        return time.getFullYear() + "-" + (time.getMonth() + 1) + '-' + time.getDate();
+                                    }
                                 }
                             }
-                        }
-                    ]
+                        ]
+                    }
                 }
+            });
+            var table = document.getElementById("positions");
+            for (position of data["positions"]) {
+                var row = table.insertRow(-1);
+                row.insertCell(0).innerHTML = position["name"];
+                row.insertCell(1).innerHTML = position["weight"] + "%";
+
             }
         });
-        var table = document.getElementById("positions");
-        for(position of data["positions"]){
-            var row = table.insertRow(-1);
-            row.insertCell(0).innerHTML = position["name"];
-            row.insertCell(1).innerHTML = position["weight"]+"%";
-
-        }
     </script>
 
 </body>
