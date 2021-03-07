@@ -28,6 +28,7 @@
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body style="background-image: url(background.jpg)">
@@ -70,6 +71,9 @@
         <br>
     </div>
     <script>
+        $.getJSON('data.json', function(data) {         
+            console.log(data);
+        });
         var data = {
             "value": [
                 {
