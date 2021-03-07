@@ -18,6 +18,9 @@
         }
     ],
     "positions": [
+        {   "name": "cash",
+            "weight": 22
+        },
         {
             "name": "Axolot Solutions",
             "weight": 14
