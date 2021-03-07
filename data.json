@@ -1,8 +1,54 @@
 {
-    "longs": [],
-    "shorts": [],
-    "nav":{
-        "datetime": [],
-        "values": []
-    }    
+    "value": [
+        {
+            "x": 1614643200,
+            "y": 100
+        },
+        {
+            "x": 1614729600,
+            "y": 91
+        },
+        {
+            "x": 1614816000,
+            "y": 102
+        },
+        {
+            "x": 1614902400,
+            "y": 101
+        }
+    ],
+    "positions": [
+        {
+            "name": "Axolot Solutions",
+            "weight": 14
+        },
+        {
+            "name": "NCC A",
+            "weight": 12
+        },
+        {
+            "name": "Simris Alg",
+            "weight": 3
+        },
+        {
+            "name": "Shape Robotics",
+            "weight": 10
+        },
+        {
+            "name": "Serneke",
+            "weight": 10
+        },
+        {
+            "name": "Dicot",
+            "weight": 6
+        },
+        {
+            "name": "S2Medical",
+            "weight": 15
+        },
+        {
+            "name": "WilLak",
+            "weight": 8
+        }
+    ]
 }
