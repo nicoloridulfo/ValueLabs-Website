@@ -1,0 +1,164 @@
+<html>
+
+<head>
+    <title>
+        ValuesLabs
+    </title>
+    <style>
+        body {
+            font-family: 'Lucida Console', monospace
+        }
+
+        .element {
+            text-align: center;
+            background-color: #ffffff;
+            border: 1px solid rgb(94, 102, 107);
+            margin: 0 5% 4% 5%;
+            opacity: 75%;
+        }
+
+        table, th, td { 
+            background-color: #ffffff;
+            text-align: center;
+            vertical-align: top;
+            width: 49%;
+            margin: 0;
+            border: 1px solid black;
+            opacity: 75%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.bundle.min.js"></script>
+</head>
+
+<body style="background-image: url(background.jpg)">
+    <h1 style="font-size:50px; text-align:center">
+        ValueLabs
+    </h1>
+    <canvas id="chart" height="60%"></canvas>
+    <br>
+    <br>
+    <br>
+    <table style="border:1px solid black;margin-left:auto;margin-right:auto;" id="positions">
+        <thead>
+            <tr>
+                <th colspan="2">Positions</th>
+            </tr>
+            <tr>
+                <th>Ticker</th>
+                <th>Weight</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <div class="element">
+        <h1 style="text-align: center;">About</h1>
+        <hr style="width: 90%">
+        <div class="text" style="text-align: justify; margin-left: 5%; margin-right: 5%;">
+            <p>
+                Valuelabs is a micro-fund that uses a mixed strategy consisting of systematic and discretionary components.
+
+                The systems are currently in development and can be seen as been in an alpha version. We have a passion for
+                Open Collaboration and will therefore be sharing analysis and source code in the hope that more companies and
+                developers will do the same. Although, for obvious reasons, the secret sauce will be kept secret.
+            </p>
+        </div>
+        <hr style="width: 90%">
+        <br>
+    </div>
+    <script>
+        var data = {
+            "value": [
+                {
+                    "x": 1614643200,
+                    "y": 100
+                },
+                {
+                    "x": 1614729600,
+                    "y": 91
+                },
+                {
+                    "x": 1614816000,
+                    "y": 102
+                },
+                {
+                    "x": 1614902400,
+                    "y": 101
+                }
+            ],
+            "positions": [
+                {
+                    "name": "Axolot Solutions",
+                    "weight": 14
+                },
+                {
+                    "name": "NCC A",
+                    "weight": 12
+                },
+                {
+                    "name": "Simris Alg",
+                    "weight": 3
+                },
+                {
+                    "name": "Shape Robotics",
+                    "weight": 10
+                },
+                {
+                    "name": "Serneke",
+                    "weight": 10
+                },
+                {
+                    "name": "Dicot",
+                    "weight": 6
+                },
+                {
+                    "name": "S2Medical",
+                    "weight": 15
+                },
+                {
+                    "name": "WilLak",
+                    "weight": 8
+                }
+            ]
+        } 
+        var ctx = document.getElementById('chart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Value',
+                    data: data["value"]
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [
+                        {
+                            type: 'linear',
+                            position: 'bottom',
+                            ticks: {
+                                callback(value) {
+                                    var time = new Date(value * 1000);
+                                    return time.getFullYear() + "-" + (time.getMonth() + 1) + '-' + time.getDate();
+                                }
+                            }
+                        }
+                    ]
+                }
+            }
+        });
+        var table = document.getElementById("positions");
+        for(position of data["positions"]){
+            var row = table.insertRow(-1);
+            row.insertCell(0).innerHTML = position["name"];
+            row.insertCell(1).innerHTML = position["weight"]+"%";
+
+        }
+    </script>
+
+</body>
+
+</html>

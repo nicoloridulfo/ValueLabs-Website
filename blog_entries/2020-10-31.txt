@@ -1,5 +1,0 @@
-Happy Halloween!
-<br>
-Since the last post the deployment of updates to the website has been automated using github actions and the <a href="https://github.com/nicoloridulfo/ValueLabs-Website">website-repo</a> has been made public.<br>
-<br>
-Alongside the development of the website, the data ingestion-engine is being worked on. Currently the idea is to run all the components of the system in separate containers in docker. Docker will allow us to separate the development, testing and production environments in a easy but structured way. 
