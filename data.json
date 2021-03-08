@@ -15,15 +15,19 @@
         {
             "x": 1614902400,
             "y": 101
+        },
+        {
+            "x": 1615161600,
+            "y": 101
         }
     ],
     "positions": [
         {   "name": "cash",
-            "weight": 22
+            "weight": 0
         },
         {
             "name": "Axolot Solutions",
-            "weight": 14
+            "weight": 15
         },
         {
             "name": "NCC A",
@@ -50,8 +54,12 @@
             "weight": 15
         },
         {
-            "name": "WilLak",
-            "weight": 8
+            "name": "Promore Pharma",
+            "weight": 13
+        },
+        {
+            "name": "TietoEVRY Mini Future ",
+            "weight": 17
         }
     ]
 }
