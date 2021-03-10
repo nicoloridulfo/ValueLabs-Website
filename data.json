@@ -1,65 +1,58 @@
 {
-    "value": [
-        {
-            "x": 1614643200,
-            "y": 100
-        },
-        {
-            "x": 1614729600,
-            "y": 91
-        },
-        {
-            "x": 1614816000,
-            "y": 102
-        },
-        {
-            "x": 1614902400,
-            "y": 101
-        },
-        {
-            "x": 1615161600,
-            "y": 101
-        }
-    ],
-    "positions": [
-        {   "name": "cash",
-            "weight": 0
-        },
-        {
-            "name": "Axolot Solutions",
-            "weight": 15
-        },
-        {
-            "name": "NCC A",
-            "weight": 12
-        },
-        {
-            "name": "Simris Alg",
-            "weight": 3
-        },
-        {
-            "name": "Shape Robotics",
-            "weight": 10
-        },
-        {
-            "name": "Serneke",
-            "weight": 10
-        },
-        {
-            "name": "Dicot",
-            "weight": 6
-        },
-        {
-            "name": "S2Medical",
-            "weight": 15
-        },
-        {
-            "name": "Promore Pharma",
-            "weight": 13
-        },
-        {
-            "name": "TietoEVRY Mini Future ",
-            "weight": 17
-        }
-    ]
+   "value": [
+      {
+         "x": 1614643200,
+         "y": 100
+      },
+      {
+         "x": 1614729600,
+         "y": 91
+      },
+      {
+         "x": 1614816000,
+         "y": 102
+      },
+      {
+         "x": 1614902400,
+         "y": 101
+      },
+      {
+         "x": 1615161600,
+         "y": 101
+      },
+      {
+         "x": 1615330800,
+         "y": 103
+      }
+   ],
+   "positions": [
+      {
+         "name": "liquidity",
+         "weight": 37
+      },
+      {
+         "name": "Dicot",
+         "weight": 5
+      },
+      {
+         "name": "Promore Pharma",
+         "weight": 12
+      },
+      {
+         "name": "S2Medical B",
+         "weight": 15
+      },
+      {
+         "name": "Serneke Group B",
+         "weight": 10
+      },
+      {
+         "name": "Simris Alg B",
+         "weight": 3
+      },
+      {
+         "name": "MINI L TIETO AVA 4",
+         "weight": 17
+      }
+   ]
 }
