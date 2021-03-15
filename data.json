@@ -31,12 +31,16 @@
       {
          "x": 1615503600,
          "y": 103
+      },
+      {
+         "x": 1615762800,
+         "y": 103
       }
    ],
    "positions": [
       {
          "name": "liquidity",
-         "weight": 36
+         "weight": 54
       },
       {
          "name": "Dicot",
@@ -57,10 +61,6 @@
       {
          "name": "Simris Alg B",
          "weight": 3
-      },
-      {
-         "name": "MINI L TIETO AVA 4",
-         "weight": 16
       }
    ]
 }
